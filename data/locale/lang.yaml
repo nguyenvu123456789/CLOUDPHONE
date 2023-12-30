@@ -1,0 +1,78 @@
+en:
+  name: English
+zh-Hant:
+  name: Chinese (Traditional)
+zh-Hans:
+  name: Chinese (Simplified)
+af:
+  name: Afrikaans
+am:
+  name: Amharic
+ar:
+  name: Arabic
+bn-IN:
+  name: Bengali India
+nl:
+  name: Dutch
+fi:
+  name: Finnish
+fr:
+  name: French
+de:
+  name: German
+gu:
+  name: Gujarati
+ha:
+  name: Hausa
+he:
+  name: Hebrew
+hi:
+  name: Hindi
+it:
+  name: Italian
+kn:
+  name: Kannada
+ml:
+  name: Malayalam
+mr:
+  name: Marathi
+or:
+  name: Oriya
+pl:
+  name: Polish
+pt-BR:
+  name: Portuguese (Brazil)
+pt-PT:
+  name: Portuguese (Portugal)
+pa:
+  name: Punjabi
+ru:
+  name: Russian
+st:
+  name: Sesotho
+es:
+  name: Spanish
+es-419:
+  name: Spanish (Latin)
+es-US:
+  name: Spanish (United States)
+sw:
+  name: Swahili
+ta:
+  name: Tamil
+te:
+  name: Telugu
+th:
+  name: Thai
+tr:
+  name: Turkish
+ur:
+  name: Urdu
+vi:
+  name: Vietnamese
+xh:
+  name: Xhosa
+yo:
+  name: Yoruba
+zu:
+  name: Zulu

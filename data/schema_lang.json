@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "patternProperties": {
+    ".*": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "native": {
+          "type": "string"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
