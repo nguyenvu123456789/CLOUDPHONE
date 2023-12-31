@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const output = process?.env?.output || "standalone";
+const basePath = process?.env?.basePath || "";
 const headers = "export" === output ? undefined :async () => {
     return [
       {
@@ -19,6 +20,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output,
+  basePath,
   headers,
 };
 

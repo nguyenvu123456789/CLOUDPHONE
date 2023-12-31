@@ -1,6 +1,7 @@
 import { Image } from "@/components/molecule";
 import { FeaturePhoneLayout } from "@/ui/templates/FeaturePhoneLayout";
 import { _ } from "@/util/i18nUtil";
+import { getAssetPath } from "@/util/getPath";
 
 export default async function SettingsPage() {
   return (
@@ -9,7 +10,7 @@ export default async function SettingsPage() {
         <Image
           nextWidth={154}
           nextHeight={96}
-          src="/logo.svg"
+          src={getAssetPath("logo.svg")}
           className="mx-auto block cm-qqvga:h-[3.125rem] cm-qqvga:w-[5.64rem]"
         />
       </div>

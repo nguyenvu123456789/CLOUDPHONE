@@ -1,10 +1,6 @@
-"use client";
+import { getEnv } from "./getEnv";
 
-import { usePathname } from "next/navigation";
-
-export const getPath = () => {
-  const p = usePathname();
-  return {
-    isInMyApps: 0 === p.indexOf('/my-apps/')
-  }
+export const getAssetPath = (s: string): string => {
+  const basePath = getEnv("basePath") || "";
+  return `${basePath}/${s}`;
 };
