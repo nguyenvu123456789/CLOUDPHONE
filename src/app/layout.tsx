@@ -6,11 +6,13 @@ import { SetLang } from "./SetLang.client";
 
 export const metadata = {
   title: "Cloud Feature Phone",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "dark",
 };
 
 export default function RootLayout({
@@ -21,14 +23,21 @@ export default function RootLayout({
   const curLang = getCurLang();
   const curDirection = getCurLangDirection();
   return (
-    <html lang={curLang} dir={curDirection} className={[roboto.variable, noto.variable].join(" ")}>
+    <html
+      lang={curLang}
+      dir={curDirection}
+      className={[roboto.variable, noto.variable].join(" ")}
+    >
       <head>
         <link rel="icon" href="data:," />
       </head>
       <body className="text-cm-gray-a">
         {children}
         <SpaceNav />
-        <div className="-top-full -left-full hidden cm-qvga:absolute cm-qvga:block cm-qvga:w-full" id="qvga"/>
+        <div
+          className="-left-full -top-full hidden cm-qvga:absolute cm-qvga:block cm-qvga:w-full"
+          id="qvga"
+        />
       </body>
       <SetLang />
     </html>

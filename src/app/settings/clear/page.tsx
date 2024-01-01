@@ -1,11 +1,11 @@
 import { YesClear } from "./YesClear.client";
-import { ConfirmComp } from "@/ui/organisms/ConfirmComp";
+import { ConfirmLayout } from "@/ui/templates/ConfirmLayout";
 import { _ } from "@/util/i18nUtil";
 
 export default async function SettingsPage() {
   return (
-    <ConfirmComp optionLink={<YesClear />}>
+    <ConfirmLayout optionLink={<YesClear />}>
       {_("Are you sure to clear data?")}
-    </ConfirmComp>
+    </ConfirmLayout>
   );
 }

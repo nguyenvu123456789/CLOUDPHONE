@@ -2,7 +2,7 @@ import { FeaturePhoneLayout } from "@/ui/templates/FeaturePhoneLayout";
 import { mixClass } from "class-lib";
 import type { FeaturePhoneLayoutProps } from "@/ui/templates/FeaturePhoneLayout";
 
-export const ConfirmComp = ({
+export const ConfirmLayout = ({
   backLinkContent = "No",
   children,
   ...props

@@ -1,10 +1,10 @@
-import { ConfirmComp } from "@/ui/organisms/ConfirmComp";
+import { ConfirmLayout } from "@/ui/templates/ConfirmLayout";
 import { _ } from "@/util/i18nUtil";
 
 export default async function SettingsPage() {
   return (
-    <ConfirmComp backLinkContent={null}>
+    <ConfirmLayout backLinkContent={null}>
       {_("Your data will be erased.")}
-    </ConfirmComp>
+    </ConfirmLayout>
   );
 }
