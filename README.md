@@ -7,7 +7,7 @@ npx create-next-app -e https://github.com/cloudfonecom/cloudfone-starter
 ## Export static page example
 
 ```
-output=export basePath=/cloudphone-app-demo next build
+output=export basePath=/cloudphone-widget-demo next build
 ```
 
 
