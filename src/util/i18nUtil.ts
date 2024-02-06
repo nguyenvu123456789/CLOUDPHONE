@@ -1,5 +1,4 @@
 import get from "get-object-value";
-import { cache } from "react";
 import fs from "fs";
 import YAML from "yaml";
 import Negotiator from "negotiator";
@@ -9,7 +8,10 @@ import { CLANG, DATA_ROOT } from "@/conf/const";
 import tpl from "tpl-string";
 import { countryToLang } from "@/util/CountryToLangISOCodeMap";
 
-const readYaml = cache((path: string) => {
+const matchCache = Object.create(null);
+const yamlCache = Object.create(null);
+
+const _readYaml = (path: string) => {
   const finalPath = `${DATA_ROOT}/locale/${path}`;
   let fileContent;
   if (fs.existsSync(finalPath)) {
@@ -23,7 +25,14 @@ const readYaml = cache((path: string) => {
   } else {
     console.warn(`[${finalPath}] not exists.`);
   }
-});
+};
+
+const readYaml = (path: string) => {
+  if (null == yamlCache[path]) {
+    yamlCache[path] = _readYaml(path);
+  }
+  return yamlCache[path];
+};
 
 class I18NUtil {
 
@@ -59,12 +68,23 @@ class I18NUtil {
     return this.getLocale(languages);
   }
 
-  getLocale(languages: string[]) {
+  getLocale = (languages: string[]) => {
+    const key = languages.sort().join(",");
+    if ("" !== key) {
+      if (null == matchCache[key]) {
+        matchCache[key] = this._getMatchLocale(key);
+      }
+      return matchCache[key];
+    }
+  };
+
+  _getMatchLocale = (sLanguages: string) => {
+    const languages = sLanguages.split(",");
     const locales = this.getLocales();
     const defaultLocale = "en-US";
     const finalLang = match(languages, locales, defaultLocale);
     return finalLang;
-  }
+  };
 
   getCurLang = (): string|undefined => {
     if (this.isStaticSite()) {
@@ -82,7 +102,7 @@ class I18NUtil {
 
   getDirection = () => {
     const curLang = this.getCurLang();
-    if (curLang) {
+    if (null != curLang) {
       return get(new Intl.Locale(curLang).maximize(), [
         "textInfo",
         "direction",
