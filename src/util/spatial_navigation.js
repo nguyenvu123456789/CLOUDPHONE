@@ -1030,12 +1030,11 @@ const onFocus = (evt) => {
         native: true,
       };
 
-      if (!fireEvent(target, "willfocus", focusProperties)) {
+      if (!fireEvent(target, "focused", focusProperties, false)) {
         _duringFocusChange = true;
         target.blur();
         _duringFocusChange = false;
       } else {
-        fireEvent(target, "focused", focusProperties, false);
         focusChanged(target, sectionId);
       }
     }
@@ -1150,15 +1149,15 @@ class SpatialNavigation {
         section.tabIndexIgnoreList !== undefined
           ? section.tabIndexIgnoreList
           : GlobalConfig.tabIndexIgnoreList;
-      parseSelector(section.selector).forEach(function (
-        /**@type Element*/ elem
-      ) {
-        if (!matchSelector(elem, tabIndexIgnoreList)) {
-          if (!elem.getAttribute("tabindex")) {
-            elem.setAttribute("tabindex", "-1");
+      parseSelector(section.selector).forEach(
+        function (/**@type Element*/ elem) {
+          if (!matchSelector(elem, tabIndexIgnoreList)) {
+            if (!elem.getAttribute("tabindex")) {
+              elem.setAttribute("tabindex", "-1");
+            }
           }
         }
-      });
+      );
     };
 
     if (sectionId) {
