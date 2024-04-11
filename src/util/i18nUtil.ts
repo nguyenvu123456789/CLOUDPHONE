@@ -8,6 +8,7 @@ import { CLANG, DATA_ROOT } from "@/conf/const";
 import tpl from "tpl-string";
 import { countryToLang } from "@/util/CountryToLangISOCodeMap";
 
+const defaultLocale = "en";
 const matchCache = Object.create(null);
 const yamlCache = Object.create(null);
 
@@ -35,7 +36,6 @@ const readYaml = (path: string) => {
 };
 
 class I18NUtil {
-
   isStaticSite() {
     return "export" === process?.env?.output;
   }
@@ -47,7 +47,7 @@ class I18NUtil {
 
   getOneIntlLang(langKey: string) {
     const localeData = this.getLocaleData();
-    if (localeData[langKey] && langKey !== "en") {
+    if (localeData[langKey] && langKey !== defaultLocale) {
       return readYaml(`${langKey}/data.yaml`);
     }
   }
@@ -69,26 +69,38 @@ class I18NUtil {
   }
 
   getLocale = (languages: string[]) => {
-    const key = languages.sort().join(",");
+    const key = languages.join(",");
     if ("" !== key) {
       if (null == matchCache[key]) {
-        matchCache[key] = this._getMatchLocale(key);
+        matchCache[key] = this._getMatchLocale(languages);
       }
       return matchCache[key];
     }
   };
 
-  _getMatchLocale = (sLanguages: string) => {
-    const languages = sLanguages.split(",");
+  _getMatchLocale = (languages: string[]) => {
     const locales = this.getLocales();
-    const defaultLocale = "en-US";
-    const finalLang = match(languages, locales, defaultLocale);
-    return finalLang;
+    let matchLang;
+    try {
+      matchLang = match(languages, locales, defaultLocale);
+    } catch {
+      matchLang = defaultLocale;
+    }
+    if (-1 === locales.indexOf(matchLang)) {
+      try {
+        matchLang = match([matchLang], locales, defaultLocale);
+      } catch {
+        matchLang = defaultLocale;
+      }
+      return matchLang;
+    } else {
+      return matchLang;
+    }
   };
 
-  getCurLang = (): string|undefined => {
+  getCurLang = (): string => {
     if (this.isStaticSite()) {
-      return;
+      return "";
     }
     const cookieStore = cookies();
     let curLang: any = cookieStore.get(CLANG)?.value;
