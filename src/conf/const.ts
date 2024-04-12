@@ -13,5 +13,10 @@ export const DATA_ROOT = "data";
 export const linkClass =
   "cursor-pointer text-cm-blue-a hover:text-cm-blue-d hover:underline";
 export const PageLinkIconSize = "h-4 w-4 cm-qvga:h-6 cm-qvga:w-6";
+
+/**
+ * Page Width 
+ */
 export const PageMaxWidth =
-  "min-w-[8rem] max-w-[8rem] cm-qvga:max-w-[15rem] cm-qvga:min-w-[15rem]";
+  "max-w-[100vw] cm-vga:max-w-[30rem] cm-vga:landscape:max-w-[40rem]";
+export const PageMaxHeight = "h-[100vh] max-h-[40rem]";

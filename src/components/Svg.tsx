@@ -52,7 +52,7 @@ export const SettingsActiveIcon = (props: SvgProps): JSX.Element => (
 
 export const BackArrowIcon = (props: SvgProps): JSX.Element => (
   <Svg {...props}>
-    <path d="M15.705 7.41L14.295 6L8.29498 12L14.295 18L15.705 16.59L11.125 12L15.705 7.41Z" />
+    <path d="M9 19L10.41 17.59L5.83 13H22V11H5.83L10.42 6.41L9 5L2 12L9 19Z" />
   </Svg>
 );
 

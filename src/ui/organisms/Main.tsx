@@ -27,8 +27,10 @@ export const Main = ({
   } else {
     inner = (
       <div
+        data-overflow
+        aria-label="inner"
         className={mixClass(
-          "w-96 min-w-[24rem] overflow-y-auto outline-none",
+          "min-w-[42rem] overflow-y-auto outline-none",
           height
         )}
       >
@@ -39,8 +41,9 @@ export const Main = ({
   return (
     <main
       className={mixClass(
+        "relative",
         "flex flex-1 overflow-hidden outline-none",
-        "bg-cm-gray-020 text-white",
+        "bg-cm-gray-202",
         className,
         width
       )}

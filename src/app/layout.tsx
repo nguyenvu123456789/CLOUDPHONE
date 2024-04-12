@@ -31,7 +31,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="data:," />
       </head>
-      <body className="text-cm-gray-a">
+      <body className="h-full text-white">
         {children}
         <SpaceNav />
         <div

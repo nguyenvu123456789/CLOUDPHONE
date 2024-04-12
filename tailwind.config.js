@@ -7,10 +7,12 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,cjs,mjs,cts,mts}"],
   theme: {
     screens: {
+      // 480x640 
+      "cm-vga": "30rem",
       // 240x320
       "cm-qvga": "15rem",
       // 128x160
-      "cm-qqvga": {'max': '8rem'},
+      "cm-qqvga": { max: "8rem" },
     },
     fontFamily: {
       sans: ["Roboto", "var(--font-roboto)", "var(--font-noto)"],
@@ -23,7 +25,7 @@ export default {
       },
       colors: {
         "cm-blue-009": "#0093e0",
-        "cm-blue-05a": "#05aef2",
+        "cm-blue-1a7": "#1a73e8", // puffin new blue
         "cm-blue-b0e": "#b0e2fb",
         "cm-red-f43": "#f43030",
         "cm-red-f43-80": "rgba(244, 48, 48, 0.8)",
@@ -42,7 +44,7 @@ export default {
         "cm-gray-888-20": "rgba(136, 136, 136, 0.2)",
         "cm-gray-beb": "#bebebe",
         "cm-gray-f0f": "#f0f0f0",
-        "cm-gray-020": "#202020",
+        "cm-gray-202": "#202020",
         "cm-white-fff-90": "rgba(255, 255, 255, 0.9)",
         "cm-white-fff-50": "rgba(255, 255, 255, 0.5)",
       },
