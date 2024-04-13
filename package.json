@@ -11,16 +11,16 @@
     "test": "STRICT_MODE=1 npx mocha '{data,src}/**/__tests__/*.{ts,mjs}'"
   },
   "dependencies": {
-    "@formatjs/intl-localematcher": "^0.5.2",
-    "array.dedup": "^0.3.1",
+    "@formatjs/intl-localematcher": "^0.5.4",
+    "array.dedup": "^0.3.2",
     "call-func": "^0.3.9",
     "class-lib": "^0.1.5",
-    "get-cookie": "^0.3.4",
+    "get-cookie": "^0.3.5",
     "get-object-value": "^0.6.9",
     "get-window-offset": "^0.8.2",
     "immutable": "5.0.0-beta.4",
     "negotiator": "^0.6.3",
-    "next": "14.0.4",
+    "next": "14.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reshow-build": "^0.17.26",
@@ -31,23 +31,23 @@
     "tpl-string": "^0.0.1",
     "ucfirst-js": "^0.1.1",
     "win-doc": "^0.3.4",
-    "yaml": "^2.3.4"
+    "yaml": "^2.4.1"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.3",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
-    "autoprefixer": "^10.4.16",
-    "chai": "^4.3.10",
+    "autoprefixer": "^10.4.19",
+    "chai": "^4.4.1",
     "concurrently": "^7.6.0",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "glob": "10.3.6",
     "jsonschema": "^1.4.1",
     "mocha": "10.2.0",
-    "postcss": "^8.4.32",
-    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "typescript": "5.2.2"
   }
 }

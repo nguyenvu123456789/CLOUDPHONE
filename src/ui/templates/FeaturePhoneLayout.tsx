@@ -28,7 +28,7 @@ const DefaultOptionLink = () => <div className={PageLinkIconSize} />;
 export const FeaturePhoneLayout = ({
   optionLink = DefaultOptionLink,
   backLink = DefaultPageGoToBackLink,
-  enterLink = EnterTip,
+  enterLink = <EnterTip />,
   stickyHeader = null,
   tip,
   className,
