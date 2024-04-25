@@ -7,6 +7,9 @@ export const ENABLEED_DEVELOPER_MODE = "enable-developer-mode";
 export const COOKIE_EXPIRE_DAY = 400;
 export const DATA_ROOT = "data";
 
+export const DEFAULT_ENV: { [key: string]: string } = {
+};
+
 /**
  * CSS Styles
  */
