@@ -20,7 +20,12 @@ export const Main = ({
   let inner;
   if (scrollbarVisible) {
     inner = (
-      <div className={mixClass(width, "overflow-y-auto overflow-x-hidden outline-none")}>
+      <div
+        className={mixClass(
+          width,
+          "overflow-y-auto overflow-x-hidden outline-none"
+        )}
+      >
         {children}
       </div>
     );
@@ -30,7 +35,7 @@ export const Main = ({
         data-overflow
         aria-label="inner"
         className={mixClass(
-          "min-w-[42rem] overflow-y-auto outline-none",
+          "w-full min-w-[42rem] overflow-y-auto outline-none",
           height
         )}
       >
