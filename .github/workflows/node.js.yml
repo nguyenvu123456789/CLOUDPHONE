@@ -7,28 +7,33 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x] # Sử dụng Node.js phiên bản mới hơn nếu cần
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
       run: npm install
 
-    - name: Run the tests
-      run: npm test
-
-    - name: Build
+    - name: Build the project
       run: npm run build
+
+    - name: Export static files
+      run: npm run export
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out

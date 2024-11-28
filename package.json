@@ -15,6 +15,7 @@
     "array.dedup": "^0.3.2",
     "call-func": "^0.3.9",
     "class-lib": "^0.1.5",
+    "cloudfone-example": "file:",
     "get-cookie": "^0.3.5",
     "get-object-value": "^0.6.9",
     "get-window-offset": "^0.8.2",
