@@ -15,7 +15,16 @@ export default async function HomePage() {
         </GotoLink>
       }
     >
-      Hello, there.
+      <div>
+        <h1 className="text-xl font-bold mb-4">Hello, there.</h1>
+        {/* Button điều hướng */}
+        <GotoLink
+          href="/about"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Go to About Page
+        </GotoLink>
+      </div>
     </FeaturePhoneLayout>
   );
 }

@@ -8,7 +8,8 @@
     "build": "npx tailwindcss -c ./tailwind.config.js --minify && npx next build",
     "start": "HOSTNAME=0.0.0.0 PORT=80 node --max-old-space-size=200 server.js",
     "start:next": "NODE_OPTIONS='--max-old-space-size=200' npx next start -p 80 --hostname 0.0.0.0",
-    "test": "STRICT_MODE=1 npx mocha '{data,src}/**/__tests__/*.{ts,mjs}'"
+    "test": "STRICT_MODE=1 npx mocha '{data,src}/**/__tests__/*.{ts,mjs}'",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
